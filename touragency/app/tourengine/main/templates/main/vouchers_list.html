@@ -1,0 +1,12 @@
+{% extends 'main/base_info.html' %}
+
+{% block title %}
+	Vouchers list - {{ block.super }}
+{% endblock %}
+
+{% block content %}
+	<h1 class='mb-5'>Vouchers:<h1>
+	{% for voucher in vouchers %}
+		<h3><a href="{{ voucher.get_absolute_url }}"> {{ voucher.arrival_date }}</a></h3>
+	{% endfor %} 
+{% endblock  %}

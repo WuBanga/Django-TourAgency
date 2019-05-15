@@ -1,0 +1,43 @@
+<div class="card mb-4">
+	<div class="card-header">
+			{{ voucher.arrival_date }} - {{ voucher.departure_date }}
+	</div>
+	<div class="card-body">
+			<p class="card-text">
+				Наличие детей:
+				{% if voucher.childrens %}
+				Да
+				{% else %}
+				Нет
+				{% endif %}
+				<br>
+				Наличие мед. страховки:
+				{% if voucher.medical_insurance %}
+				Да
+				{% else %}
+				Нет
+				{% endif %}
+				<br>
+				Кол-во человек: {{ voucher.people }}
+				<br>
+				Цена: {{ voucher.price }}
+			</p>
+ 		</div>
+	<div class="card-footer text-muted">
+   		Customers:
+		   {% for customer in voucher.customers.all %}
+		   		<a href="{{ customer.get_absolute_url }}">{{ customer.surname }}</a>
+		   {% endfor %}
+		   <br>
+		Tours:
+		   {% for tour in voucher.tours.all %}
+		   		<a href="{{ tour.get_absolute_url }}">{{ tour.title }}</a>
+		   {% endfor %}
+		   <br>
+		Pensions:
+		   {% for pension in voucher.pensions.all %}
+		   		<a href="{{ pension.get_absolute_url }}">{{ pension.title }}</a>
+		   {% endfor %}
+		   
+  	</div>
+</div>

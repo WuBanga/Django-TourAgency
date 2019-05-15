@@ -1,0 +1,26 @@
+{% extends 'main/base_info.html' %}
+
+{% block title %}
+	{{ voucher.arrival_date }} - {{ voucher.departure_date }}
+{% endblock %}
+
+{% block content %}
+	<div class="card">
+  		<div class="card-header">
+   		 	{{ voucher.arrival_date }} - {{ voucher.departure_date }}
+ 		 </div>
+  		<div class="card-body">
+			<p class="card-text">
+				Дата рожедния: {{ customer.birthday }}
+				<br>
+				Паспорт: {{ customer.passport }}
+				<br>
+				Адресс: {{ customer.address }}
+				<br>
+				Город: {{ customer.city }}
+				<br>
+				Телефон: {{ customer.telephone }}
+			</p>
+ 		</div>
+	</div>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'main/base_info.html' %}
+
+
+{% block title %}
+	Vouchers List
+{% endblock  %}
+
+{% block content %}
+	<h1 class="mb-5">Vouchers:</h1>
+	{% for voucher in page_object.object_list %}
+		{% include 'main/includes/voucher_card_template.html' %}
+			
+	{% endfor %}
+{% endblock  %}

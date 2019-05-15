@@ -1,0 +1,15 @@
+{% extends 'main/base_info.html' %}
+
+{% block title %}
+	Delete Tour "{{ tour.title|title }}" - {{ block.super }}
+{% endblock  %}
+
+{% block content %}
+	<form action="{{ tour.get_delete_url }}" method="post">
+		{% csrf_token %}
+		<h3>Are you sure you want to delete <b>"{{ tour.title|title }}"</b>?</h3>
+		<a class="btn btn-light" href="{{ tour.get_absolute_url }}">Cancel</a>
+		<button type="submit" class="btn btn-danger">Delete</button>
+
+	</form>
+{% endblock  %}

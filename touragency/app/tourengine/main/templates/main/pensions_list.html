@@ -1,0 +1,12 @@
+{% extends 'main/base_info.html' %}
+
+{% block title %}
+	Pensions list - {{ block.super }}
+{% endblock %}
+
+{% block content %}
+	<h1 class='mb-3'>Pensions:<h1>
+	{% for pension in pensions %}
+		<h3><a href="{{ pension.get_absolute_url }}"> {{ pension.title }}</a></h3>
+	{% endfor %} 
+{% endblock  %}

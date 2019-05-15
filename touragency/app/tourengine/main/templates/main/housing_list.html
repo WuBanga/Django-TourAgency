@@ -1,0 +1,12 @@
+{% extends 'main/base_info.html' %}
+
+{% block title %}
+	Type Of Housing list - {{ block.super }}
+{% endblock %}
+
+{% block content %}
+	<h1 class='mb-3'>Type Of Housing:<h1>
+	{% for house in housings %}
+		<h3><a href="{{ house.get_absolute_url }}"> {{ house.title }}</a></h3>
+	{% endfor %}
+{% endblock %}

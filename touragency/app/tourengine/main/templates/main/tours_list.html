@@ -1,0 +1,12 @@
+{% extends 'main/base_info.html' %}
+
+{% block title %}
+	Tours list - {{ block.super }}
+{% endblock %}
+
+{% block content %}
+	<h1 class='mb-3'>Tours:<h1>
+	{% for tour in tours %}
+		<h3><a href="{{ tour.get_absolute_url }}"> {{ tour.title }}</a></h3>
+	{% endfor %} 
+{% endblock %}

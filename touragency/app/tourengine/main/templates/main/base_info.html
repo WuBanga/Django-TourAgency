@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block admin-panel %}
+	
+	<div class="btn-group">
+		<button type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		Create
+		</button>
+		<div class="dropdown-menu">
+			<a class="dropdown-item" href="{% url 'customer_create_url' %}">Customer</a>
+			<a class="dropdown-item" href="{% url 'tour_create_url' %}">Tour</a>
+			<a class="dropdown-item" href="{% url 'pension_create_url' %}">Pension</a>
+			<a class="dropdown-item" href="{% url 'voucher_create_url' %}">Voucher</a>
+			<a class="dropdown-item" href="{% url 'housing_create_url' %}">Type Of Housing</a>
+			
+		</div>
+	</div>
+
+	<a href="{{ admin_object.get_update_url }}" class="btn btn-light edit" style="{% if detail %} display: block;{% endif %}">Edit</a>
+	<a href="{{ admin_object.get_delete_url }}" class="btn btn-danger delete" style="{% if detail %} display: block;{% endif %}">Delete</a>
+{% endblock  %}

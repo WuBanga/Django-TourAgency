@@ -1,0 +1,14 @@
+{% extends 'main/base_info.html' %}
+
+
+{% block title %}
+	Customers List
+{% endblock  %}
+
+{% block content %}
+	<h1 class="mb-5">Customers:</h1>
+	{% for cust in page_object.object_list %}
+		{% include 'main/includes/customer_card_template.html' %}
+		
+	{% endfor %}
+{% endblock  %}

@@ -1,0 +1,22 @@
+{% extends 'main/base_info.html' %}
+
+{% block title %}
+	{{ housing.title }} - {{ block.super }}
+{% endblock %}
+
+{% block content %}
+<div class="card">
+  		<div class="card-header">
+   		 	{{ housing.title }}
+ 		 </div>
+  		<div class="card-body">
+			<p class="card-text">
+				Категория: {{ housing.category }}
+				<br>
+				Описание: {{ housing.description }}
+				<br>
+				Цена: {{ housing.price }}
+			</p>
+ 		</div>
+	</div>
+{% endblock %}

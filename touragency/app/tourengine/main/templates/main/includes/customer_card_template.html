@@ -1,0 +1,20 @@
+<div class="card mb-4">
+	<div class="card-header">
+			{{ cust.birthday }}
+	</div>
+	<div class="card-body">
+		<p class="card-text">
+		{% block custinfo %}
+			{{cust.surname}}
+			{{cust.name}}
+		{% endblock %}
+		</p>
+		<a href="{{ cust.get_absolute_url }}" class="btn btn-primary">Read</a>
+	</div>
+	<div class="card-footer text-muted">
+   		Tours:
+		   {% for tour in cust.tours.all %}
+		   		<a href="{{ tour.get_absolute_url }}">{{ tour.title }}</a>
+		   {% endfor %}
+  	</div>
+</div>

@@ -1,0 +1,13 @@
+{% extends 'main/base_info.html' %}
+
+{% block title %}
+	{{ tour.title }} - {{ block.super }}
+{% endblock  %}
+
+{% block content %}
+	<h1 class="mb-3">Клиенты с туром "{{ tour.title|title}}":</h1>
+
+	{% for cust in tour.customers.all %}
+		{% include 'main/includes/customer_card_template.html' %}
+	{% endfor %}
+{% endblock  %}

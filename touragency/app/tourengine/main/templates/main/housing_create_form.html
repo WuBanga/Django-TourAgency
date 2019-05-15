@@ -1,0 +1,29 @@
+{% extends 'main/base_info.html' %}
+
+{% block title %}
+	Type Of Housing Create - {{ block.super }}
+{% endblock %}
+
+{% block content %}
+
+	<form action="{% url 'housing_create_url' %}" method="post">
+		{% csrf_token %}
+
+		{% for field in form %}
+			<div class="form-group">
+				{% if field.errors %}
+					<div class="alert alert-danger">
+						{{ field.errors }}
+					</div>
+				{% endif %}
+
+    			{{ field.label }}
+				{{ field }}
+  			</div>
+		{% endfor %}
+
+		<button type="submit" class="btn btn-primary">Create Type Of Housing</button>
+
+	</form>
+
+{% endblock %}

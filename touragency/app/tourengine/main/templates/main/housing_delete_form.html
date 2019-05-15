@@ -1,0 +1,15 @@
+{% extends 'main/base_info.html' %}
+
+{% block title %}
+	Delete Type Of Housing "{{ housing.title|title }}" - {{ block.super }}
+{% endblock %}
+
+{% block content %}
+	<form action="{{ housing.get_delete_url }}" method="post">
+		{% csrf_token %}
+		<h3>Are you sure you want to delete <b>"{{ housing.title|title }}"</b>?</h3>
+		<a class="btn btn-light" href="{{ housing.get_absolute_url }}">Cancel</a>
+		<button type="submit" class="btn btn-danger">Delete</button>
+
+	</form>
+{% endblock %}

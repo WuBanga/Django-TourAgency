@@ -1,0 +1,52 @@
+{% extends 'main/base_info.html' %}
+
+{% block title %}
+	{{ pension.title }} - {{ block.super }}
+{% endblock  %}
+
+{% block content %}
+	<div class="card">
+  		<div class="card-header">
+   		 	{{ pension.title }}
+ 		 </div>
+  		<div class="card-body">
+			<p class="card-text">
+				Адресс: {{ pension.address }}
+				<br>
+				Город: {{ pension.city }}
+				<br>
+				Телефон: {{ pension.telephone }}
+				<br>
+				Описание: {{ pension.description }}
+				<br>
+				Кол-во комнат: {{ pension.rooms }}
+				<br>
+				Наличие бассейна:
+				{% if pension.swimming_pool %}
+				Да
+				{% else %}
+				Нет
+				{% endif %}
+				<br>
+				Наличие медицинских услуг:
+				{% if pension.medical_services %}
+				Да
+				{% else %}
+				Нет
+				{% endif %}
+				<br>
+				Наличие спа:
+				{% if pension.spa %}
+				Да
+				{% else %}
+				Нет
+				{% endif %}
+				<br>
+				Уровень: {{ pension.level }}
+				<br>
+				Расстояние до моря: {{ pension.distance }}
+
+			</p>
+ 		</div>
+	</div>
+{% endblock  %}
